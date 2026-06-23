@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educación en Colombia</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #003f88, #0077cc);
+      color: white;
+      padding: 48px 20px 40px;
+      text-align: center;
+    }
+    .hero .flag { font-size: 40px; margin-bottom: 12px; }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 15px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* SECCIONES */
+    section { padding: 32px 20px; }
+    section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #003f88;
+    }
+    section p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* TARJETAS */
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 4px solid #0077cc;
+    }
+    .card .icon { font-size: 28px; margin-bottom: 8px; }
+    .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #003f88; }
+    .card p { font-size: 13px; color: #555; line-height: 1.6; }
+
+    /* ESTADÍSTICAS */
+    .stats-bg { background: #003f88; color: white; }
+    .stats-bg h2 { color: #FFD700; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+    .stat {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat .num { font-size: 26px; font-weight: 800; color: #FFD700; }
+    .stat .label { font-size: 11px; opacity: 0.85; margin-top: 4px; line-height: 1.4; }
+
+    /* BENEFICIOS */
+    .benefits-bg { background: #eef6ff; }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .benefit-item .dot {
+      width: 32px; height: 32px;
+      background: #0077cc;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .benefit-item p { font-size: 13px; line-height: 1.6; color: #333; }
+    .benefit-item strong { color: #003f88; }
+
+    /* DESAFÍOS */
+    .challenge-item {
+      background: white;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .challenge-item .emoji { font-size: 22px; flex-shrink: 0; }
+    .challenge-item h4 { font-size: 14px; font-weight: 700; color: #003f88; margin-bottom: 4px; }
+    .challenge-item p { font-size: 12px; color: #666; line-height: 1.5; }
+
+    /* RECURSOS */
+    .recursos-bg { background: #003f88; color: white; }
+    .recursos-bg h2 { color: #FFD700; }
+    .recurso {
+      background: rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .recurso h3 { font-size: 15px; font-weight: 700; color: #FFD700; margin-bottom: 4px; }
+    .recurso p { font-size: 12px; opacity: 0.9; line-height: 1.5; }
+
+    /* TESTIMONIOS */
+    .testimony {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .testimony::before {
+      content: '"';
+      font-size: 60px;
+      color: #0077cc;
+      opacity: 0.15;
+      position: absolute;
+      top: 6px; left: 12px;
+      font-family: serif;
+    }
+    .testimony p { font-size: 13px; color: #444; line-height: 1.7; font-style: italic; }
+    .testimony .author {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #003f88;
+      font-style: normal;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    footer strong { color: white; }
+
+    /* DIVIDER */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, #FFD700, #003f88, #CE1126);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="flag">🇨🇴</div>
+    <h1>La Importancia del<br />Estudio en Colombia</h1>
+    <p>La educación es el camino hacia un futuro mejor para todos los colombianos</p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- INTRODUCCIÓN -->
+  <section style="background: white;">
+    <h2>¿Por qué es tan importante estudiar?</h2>
+    <p>En Colombia, la educación es mucho más que adquirir conocimientos. Es una herramienta de transformación social que permite romper ciclos de pobreza, generar oportunidades y construir un país más equitativo y próspero para todos.</p>
+  </section>
+
+  <!-- TARJETAS PRINCIPALES -->
+  <section style="background: #f0f4f8;">
+    <h2>Pilares de la educación</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Transformación Social</h3>
+        <p>La educación permite que familias de bajos recursos asciendan socialmente y accedan a mejores condiciones de vida.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>Oportunidades Laborales</h3>
+        <p>Un título profesional o técnico aumenta significativamente las posibilidades de conseguir empleo digno y bien remunerado.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Pensamiento Crítico</h3>
+        <p>El estudio desarrolla capacidades para analizar la realidad, tomar mejores decisiones y participar activamente en la democracia.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>Competitividad Global</h3>
+        <p>Colombia necesita profesionales preparados para competir en un mundo globalizado y llevar al país al siguiente nivel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS -->
+  <section class="stats-bg">
+    <h2>Colombia en cifras educativas</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">52%</div>
+        <div class="label">Cobertura en educación superior</div>
+      </div>
+      <div class="stat">
+        <div class="num">98%</div>
+        <div class="label">Tasa de alfabetismo adulto</div>
+      </div>
+      <div class="stat">
+        <div class="num">2.3x</div>
+        <div class="label">Más ingresos con título universitario</div>
+      </div>
+      <div class="stat">
+        <div class="num">1.8M</div>
+        <div class="label">Estudiantes en educación superior</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits-bg">
+    <h2>Beneficios de estudiar</h2>
+    <div class="benefit-item">
+      <div class="dot">💰</div>
+      <p><strong>Mayores ingresos:</strong> Los profesionales ganan en promedio 2 a 3 veces más que quienes solo tienen bachillerato.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="dot">🏥</div>
+      <p><strong>Mejor salud:</strong> Las personas con más educación tienen mayor acceso a servicios de salud y hábitos saludables.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="dot">🗳️</div>
+      <p><strong>Participación ciudadana:</strong> La educación forma ciudadanos más informados y comprometidos con su comunidad.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="dot">🚀</div>
+      <p><strong>Emprendimiento:</strong> El conocimiento impulsa la creación de empresas e innovación que generan empleo.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="dot">🤝</div>
+      <p><strong>Equidad social:</strong> Reduce las brechas entre regiones, géneros y clases sociales en todo el país.</p>
+    </div>
+  </section>
+
+  <!-- DESAFÍOS -->
+  <section style="background: white;">
+    <h2>Retos y avances</h2>
+    <div class="challenge-item">
+      <div class="emoji">🏘️</div>
+      <div>
+        <h4>Zonas rurales</h4>
+        <p>Las regiones apartadas como el Pacífico y la Amazonía aún tienen cobertura limitada. El gobierno trabaja en conectividad e infraestructura.</p>
+      </div>
+    </div>
+    <div class="challenge-item">
+      <div class="emoji">💸</div>
+      <div>
+        <h4>Costo de la educación</h4>
+        <p>Muchos jóvenes abandonan sus estudios por falta de recursos. Programas como Generación E buscan reducir esta barrera.</p>
+      </div>
+    </div>
+    <div class="challenge-item">
+      <div class="emoji">📱</div>
+      <div>
+        <h4>Brecha digital</h4>
+        <p>La pandemia evidenció que no todos tienen acceso a internet. Colombia avanza en dotar de tecnología a más escuelas.</p>
+      </div>
+    </div>
+    <div class="challenge-item">
+      <div class="emoji">👩‍🏫</div>
+      <div>
+        <h4>Calidad docente</h4>
+        <p>Mejorar la formación y condiciones de los maestros es clave para elevar la calidad educativa en todo el territorio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS -->
+  <section class="recursos-bg">
+    <h2>Apoyos disponibles en Colombia</h2>
+    <div class="recurso">
+      <h3>🎓 ICETEX</h3>
+      <p>Créditos educativos condonables para estudiantes de bajos recursos que quieran ingresar a la educación superior.</p>
+    </div>
+    <div class="recurso">
+      <h3>⚙️ SENA</h3>
+      <p>Formación técnica y tecnológica gratuita en cientos de programas. Ideal para acceder rápido al mundo laboral.</p>
+    </div>
+    <div class="recurso">
+      <h3>🌟 Generación E</h3>
+      <p>Programa del gobierno que financia la matrícula universitaria a estudiantes sobresalientes de estratos 1, 2 y 3.</p>
+    </div>
+    <div class="recurso">
+      <h3>💻 Territorios Digitales</h3>
+      <p>Iniciativa para llevar conectividad e infraestructura tecnológica a municipios remotos de Colombia.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section style="background: #f5f5f5;">
+    <h2>Voces que inspiran</h2>
+    <div class="testimony">
+      <p>Gracias al SENA pude capacitarme en sistemas y hoy tengo mi propia empresa de tecnología. Estudiar cambió mi vida completamente.</p>
+      <div class="author">— Andrés M., Medellín</div>
+    </div>
+    <div class="testimony">
+      <p>Vengo de un pueblo en el Huila. Con el ICETEX pude estudiar enfermería y ahora ayudo a mi comunidad. La educación es la mejor inversión.</p>
+      <div class="author">— Valentina R., Neiva</div>
+    </div>
+    <div class="testimony">
+      <p>Fui la primera en mi familia en ir a la universidad. Hoy soy ingeniera y sirvo de ejemplo para mis hermanos menores.</p>
+      <div class="author">— Luisa C., Cali</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer>
+    <strong>Educación en Colombia 🇨🇴</strong><br />
+    La educación es el arma más poderosa<br />que puedes usar para cambiar el mundo.<br />
+    <br />
+    <em>— Nelson Mandela</em><br />
+    <br />
+    Fuentes: MEN · DANE · ICETEX · OCDE 2025
+  </footer>
+
+</body>
+</html>
